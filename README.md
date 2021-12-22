@@ -1,5 +1,7 @@
 # Stickynotes
 
+![preview.png](preview.png)
+
 Stickynotes is a simple Post-it Note style note taking and reminder aplpication. It features persistent storage - anyone who uses it can make as many notes as they like and they will persist between sessions. Using localstorage to hold persistent information was the goal of the project, and Stickynotes works handily in that regard.
 
 Stickynotes contains some starter notes, but notes can be added or deleted, and existing notes can be edited.
