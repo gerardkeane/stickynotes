@@ -3,17 +3,19 @@ export default {
   data() {
     return {
       notes: [
-        { id: 1, msg: "This is your first Stickynote. It's very simple." },
+        { id: 1, msg: "This is your first Stickynote. It's very simple.", hover: false },
         {
           id: 2,
           msg: "Here's another one. These are intended for transient, simple reminders.",
+          hover: false,
         },
-        { id: 3, msg: "There are no due dates, no alarms - just simple reminders." },
+        { id: 3, msg: "There are no due dates, no alarms - just simple reminders.", hover: false },
         {
           id: 4,
           msg: "You can add new Stickynotes by using the button at the top of the page.",
+          hover: false,
         },
-        { id: 5, msg: "And you can delete notes when you are finished with them." },
+        { id: 5, msg: "And you can delete notes when you are finished with them.", hover: false },
       ],
     };
   },
@@ -22,6 +24,7 @@ export default {
       let newNote = {
         id: Math.floor(Math.random() * 100),
         msg: "",
+        hover: false,
       };
       this.notes.push(newNote);
       localStorage.setItem("_stickynotes", JSON.stringify(this.notes));
@@ -72,11 +75,12 @@ export default {
       </button>
     </div>
     <div class="grid grid-cols-4 mt-10 gap-4">
-      <div v-for="note in notes" class="relative">
+      <div v-for="note in notes" @mouseover="note.hover = true" @mouseleave="note.hover = false" class="relative">
         <div class="w-full h-full bg-yellow-300">
           <div>
             <textarea class="bg-yellow-300 w-80 h-72 mt-4 ml-4" v-model="note.msg"></textarea>
             <button
+              v-if="note.hover"
               @click="deleteNote(note.id)"
               class="
                 absolute
