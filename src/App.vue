@@ -74,11 +74,11 @@ export default {
         Add note
       </button>
     </div>
-    <div class="grid grid-cols-4 mt-10 gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 mt-10 gap-4">
       <div v-for="note in notes" @mouseover="note.hover = true" @mouseleave="note.hover = false" class="relative">
         <div class="w-full h-full bg-yellow-300">
           <div>
-            <textarea class="bg-yellow-300 w-80 h-72 mt-4 ml-4" v-model="note.msg"></textarea>
+            <textarea class="bg-yellow-300 w-96 md:w-80 lg:w-72 2xl:w-80 h-72 mt-4 ml-4" v-model="note.msg"></textarea>
             <button
               v-if="note.hover"
               @click="deleteNote(note.id)"
