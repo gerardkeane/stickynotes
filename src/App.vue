@@ -82,18 +82,7 @@ export default {
             <button
               v-if="note.hover"
               @click="deleteNote(note.id)"
-              class="
-                absolute
-                bottom-1
-                right-1
-                bg-yellow-300
-                hover:bg-yellow-400
-                text-yellow-800
-                font-bold
-                py-2
-                px-2
-                rounded-full
-              "
+              class="absolute bottom-1 right-1 bg-yellow-300 hover:bg-yellow-400 text-yellow-800 font-bold py-2 px-2 rounded-full"
             >
               <v-icon name="md-deleteforever" scale="1.5" />
             </button>
@@ -118,6 +107,6 @@ textarea {
   -moz-box-shadow: none;
   box-shadow: none;
 
-  resize: none;
+  resize: none !important;
 }
 </style>
